@@ -1,0 +1,113 @@
+.eumotm {
+	background-image: url(./../cards/eumotm.png);
+}
+
+.fof {
+	background-image: url(./../cards/fof.png);
+}
+
+.fut-birthday {
+	background-image: url(./../cards/fut-birthday.png);
+}
+
+.futmas {
+	background-image: url(./../cards/futmas.png);
+}
+
+.green {
+	background-image: url(./../cards/green.png);
+}
+
+.hero {
+	background-image: url(./../cards/hero.png);
+}
+
+.if-bronze {
+	background-image: url(./../cards/if-bronze.png);
+}
+
+.if-gold {
+	background-image: url(./../cards/if-gold.png);
+}
+
+.if-silver {
+	background-image: url(./../cards/if-silver.png);
+}
+
+.motm {
+	background-image: url(./../cards/motm.png);
+}
+
+.otw {
+	background-image: url(./../cards/otw.png);
+}
+
+.potm {
+	background-image: url(./../cards/potm.png);
+}
+
+.ptg {
+	background-image: url(./../cards/ptg.png);
+}
+
+.ptgs {
+	background-image: url(./../cards/ptgs.png);
+}
+
+.rare-bronze {
+	background-image: url(./../cards/rare-bronze.png);
+}
+
+.rare-gold {
+	background-image: url(./../cards/rare-gold.png);
+}
+
+.rare-silver {
+	background-image: url(./../cards/rare-silver.png);
+}
+
+.rb {
+	background-image: url(./../cards/rb.png);
+}
+
+.sbc {
+	background-image: url(./../cards/sbc.png);
+}
+
+.scream {
+	background-image: url(./../cards/scram.png);
+}
+
+.swap {
+	background-image: url(./../cards/swap.png);
+}
+
+.totgs {
+	background-image: url(./../cards/totgs.png);
+}
+
+.totks {
+	background-image: url(./../cards/totks.png);
+}
+
+.tots-bronze {
+	background-image: url(./../cards/tots-bronze.png);
+}
+
+.tots-gold {
+	background-image: url(./../cards/tots-gold.png);
+}
+
+.tots-bronze {
+	background-image: url(./../cards/tots-bronze.png);
+}
+
+.toty {
+	background-image: url(./../cards/toty.png);
+}
+
+
+.player-card {
+	background-repeat: no-repeat;
+	background-size: 100%;
+}

@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "Roboto";
+	src: url(./../fonts/roboto-v18-latin-regular.woff2) format("woff2"),
+	url(./../fonts/roboto-v18-latin-regular.woff) format("woff");
+}
+
+button.submit:hover {
+	box-shadow: 2px 4px 2px 2px navy;
+	font-size: 110%;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+	width: 97%;
+	height: 95%;
+	font-family: Segoe UI;
+	font-size: 80%;
+}
+
+ol {
+	position: relative;
+	right: 8px;
+}
+
+ol li {
+	margin: 4px 0px 4px 0px;
+}
+
+ol li * {
+	margin: 0px 4px 0px 4px; /* Separate each element inside the <li>s so they still look good */
+}
+
+.conditions-summary {
+	width: 261px;
+	display: inline-block;
+	height: 163px;
+}
+
+.horizontal div {
+	float: left;
+}
+
+.extra-width {
+	width: 102%;
+}
+
+.formation-picker {
+	width: 111px;
+}
+
+.full-width {
+	width: 99%;
+}
+
+.sbc-conditions {
+	width: 411px;
+	display: inline-block;
+}
+
+.welcome {
+	z-index: 2;
+	opacity: 0.76;
+	background-color: white;
+	height: 540px;
+	width: 50%;
+	position: relative;
+	color: navy;
+	font-family: Roboto;
+}
+
+.welcome-description {
+	top: 20%;
+	left: 50%;
+	font-size: 110%;
+	margin: 2% 0% 5% 0%;
+}
+
+.welcome-message {
+	top: 10%;
+	left: 50%;
+	font-size: 230%;
+	margin: 1% 0% 3% 0%;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="./assets/styles/index.css" />
+		<link rel="stylesheet" href="./assets/styles/card layout.css" />
+		<link rel="stylesheet" href="./assets/styles/card backgrounds.css" />
+		<link rel="stylesheet" href="./assets/styles/card fonts.css" />
+		<link rel="stylesheet" href="./assets/styles/overlay.css" />
+		<script src="./assets/libs/underscore-1.9.1.js"></script>
+		<meta charset="UTF-8">
+		<title>FIFA 18 Squad Building Challenge Generator</title>
+	</head>
+	<body style="background-color: navy">
+		<h3 class="heading">FUT 18 Squad Building Challenge Generator</h3>
+		<div class="relative welcome" id="overlay">
+		<!--<div class="presentation">
+			</div>
+			<div class="select-conditions">
+				<div class="left conditions-controllers">
+					<div class="left formation">
+						<select id="formation">
+							<option></option>
+							<option>3-4-1-2</option><option>4-1-2-1-2</option>
+							<option>4-2-3-1</option><option>4-3-1-2</option>
+							<option>4-4-1-1</option><option>4-5-1</option>
+							<option>5-2-1-2</option><option>3-4-2-1</option>
+							<option>4-1-2-1-2 (2)</option><option>4-2-3-1 (2)</option>
+							<option>4-3-2-1</option><option>4-4-2</option>
+							<option>4-5-1 (2)</option><option>5-2-2-1</option>
+							<option>3-4-3</option><option>4-1-4-1</option>
+							<option>4-2-2-2</option><option>4-3-3</option>
+							<option>4-4-2 (2)</option><option>5-3-2</option>
+							<option>3-5-2</option><option>4-3-3 (2)</option>
+							<option>4-3-3 (3)</option><option>4-3-3 (4)</option>
+							<option>4-3-3 (5)</option>
+						</select>
+					</div>
+					<div class="right conditions-dropdowns">
+						<ul class="condition-listing">
+						</ul>
+					</div>
+					<div style="clear: both"></div>
+				</div>
+				<div class="right checker">
+					<textarea class="conditions-viewer"></textarea>
+				</div>
+				<div style="clear: both"></div>
+			</div>
+		-->
+		</div>
+		<div class="relative wrapper">
+			<div class="left conditions-block">
+				<div class="conditions-wrapper">
+					<div id="listed-conditions">
+						<span id="conditions-count" class="text section-header">0/5 conditions listed</span>
+						<ul id="conditions-list">
+						</ul>
+					</div>
+				</div>
+				<div class="confirm not-confirmed">
+					<button id="confirm" class="options-start-button">Submit Squad</button>
+				</div>
+			</div>
+			<div class="field left">
+				<div class="svg layer">
+				</div>
+				<div class="div layer">
+				</div>
+			</div>
+			<div class="right team-infos">
+				<table>
+					<tr>
+						<td><span class="text">Rating</span>
+						</td>
+						<td>
+							<span class="number">0</span>
+						</td>
+						<td><div class="stars"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="text">Chemistry</span>
+						</td>
+						<td>
+							<span class="number">0</span>
+						</td>
+						<td><div class="chemistry-bar">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<footer>
+			<div class="center">
+				<p>
+					<u><strong>DISCLAIMER:</strong></u> This web app uses content under copyright for the sole purpose of having fun, so please take it as such. All rights belong to Electronic Arts.
+				</p>
+			</div>
+		</footer>
+		<script src="./assets/scripts/util.js"></script>
+		<script src="./assets/scripts/nations.js"></script>
+		<script src="./assets/scripts/players.js"></script>
+		<script src="./assets/scripts/core.js"></script>
+		<script src="./assets/scripts/fut.js"></script>
+		<script src="./assets/scripts/validator.js"></script>
+		<script src="./assets/scripts/cards.js"></script>
+		<script src="./assets/scripts/tester.js"></script>
+		<!--<script src="./assets/scripts/overlay.js"></script>-->
+	</body>
+</html>

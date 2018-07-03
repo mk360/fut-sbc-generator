@@ -1,0 +1,152 @@
+.card {
+	float: left;
+	width: 71%;
+	height: 100%;
+}
+
+.cardText, div.inline-text {
+	font-size: 80%;
+	font-family: Roboto;
+}
+
+.inline-text {
+	text-align: center;
+	position: relative;
+	right: 2%;
+	height: 70%;
+	font-size: 70%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.in-field .player-image {
+	height: 38.5%;
+}
+
+.in-field .cardText, .in-field .inline-text {
+	font-size: 67%;
+}
+
+.in-field .player-chemistry span {
+	font-size: 110%;
+}
+
+.in-field .player-name {
+	position: relative;
+	bottom: 1%;
+}
+
+.loyalty {
+	border-radius: 5%;
+	background-color: rgba(255, 120, 120, 50%);
+	border: solid 2px rgba(255, 120, 120, 50%);
+	font-family: Segoe UI;
+}
+
+.player-card {
+	width: 200px;
+	height: 300px;
+	background-size: 100%;
+	font-family: Segoe UI;
+}
+
+.player-card.in-field {
+	width: 160px;
+	height: 270px;
+	position: relative;
+	z-index: 0;
+}
+
+.player-club {
+	top: 14%;
+	left: 5%;
+}
+
+.player-club img {
+	width: 70%;
+	height: 70%;
+}
+
+.player-chemistry {
+	position: relative;
+}
+
+.player-chemistry span {
+	position: relative;
+	font-size: 110%;
+}
+
+.player-image {
+	height: 43.5%;
+	margin-top: 11%;
+}
+
+.player-image img {
+	height: 100%;
+	width: auto;
+}
+
+.player-overall {
+	top: 14%;
+	font-size: 150%;
+}
+
+.player-position {
+	top: 12%;
+	font-size: 88%;
+}
+
+.player-name {
+	height: 9%;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 150%;
+	bottom: 4%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.player-nation {
+	top: 15%;
+	left: 5%;
+}
+
+.player-nation img {
+	width: 70%;
+	height: 100%;
+}
+
+.sidebar {
+	float: left;
+	width: 23%;
+	height: 100%;
+	margin-left: 2%;
+}
+
+.sidebar div, .player-name div {
+	position: relative;
+	text-align: center;
+}
+
+.x-button {
+	width: 13%;
+	height: 8%;
+	position: relative;
+	z-index: 1;
+	left: 5%;
+	bottom: 99%;
+	color: wheat;
+}
+
+.x-button button {
+	height: 90%;
+	width: 49%;
+	border: none;
+	position: relative;
+	left: 2%;
+}
+
+.x-button button:hover {
+	background-color: rgba(255, 0, 0, 0.6);
+}

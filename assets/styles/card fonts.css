@@ -1,0 +1,107 @@
+.eumotm {
+  color: #003482; }
+  .eumotm .player-name {
+    color: #e6e6e6; }
+
+.fof {
+  color: #201d55; }
+  .fof .player-name {
+    color: #fff; }
+
+.fut-birthday {
+  color: #33558d; }
+
+.futmas {
+  color: #fff; }
+
+.green {
+  color: #fff; }
+  .green .sidebar {
+    color: #1b6b34; }
+
+.hero {
+  color: #d4c0fc; }
+  .hero .sidebar {
+    color: #111124; }
+
+.if-gold {
+  color: #e1c775; }
+  .if-gold .sidebar {
+    color: #1e1d1a; }
+
+.if-silver {
+  color: #cdd9e1; }
+  .if-silver .sidebar {
+    color: #1e1d1a; }
+
+.motm {
+  color: #ffe2ca; }
+  .motm .sidebar {
+    color: #381a01; }
+
+.otw {
+  color: #d5b43a; }
+
+.potm {
+  color: #f1dd7c; }
+  .potm .sidebar {
+    color: #111124; }
+
+.ptg, .ptgs {
+  color: #fff; }
+  .ptg .sidebar, .ptgs .sidebar {
+    color: #201d55; }
+
+.rare-bronze {
+  color: #462c17; }
+
+.rare-gold {
+  color: #2b180c; }
+
+.rare-silver {
+  color: #252629; }
+
+.rb {
+  color: #eaedf4; }
+
+.sbc {
+  color: #fff; }
+
+.scream {
+  color: #ff6f09; }
+  .scream .player-name {
+    color: #000; }
+
+.swap .sidebar {
+  color: #c0ff36; }
+.swap .textbox {
+  color: #fff; }
+.swap .player-name {
+  color: #201c55; }
+
+.totgs {
+  color: #201c55; }
+  .totgs .sidebar {
+    color: #111124; }
+
+.totks {
+  color: #201c55; }
+  .totks .sidebar {
+    color: #111124; }
+
+.tots-bronze {
+  color: #e4b17f; }
+  .tots-bronze .sidebar {
+    color: #4d331f; }
+
+.tots-gold {
+  color: #4d331f; }
+  .tots-gold .sidebar {
+    color: #ff99ed; }
+
+.toty {
+  color: #d0b361; }
+  .toty .textbox {
+    color: #fff; }
+
+/*# sourceMappingURL=card%20fonts.css.map */

@@ -1,0 +1,206 @@
+@font-face {
+	font-family: Fira Sans Heading;
+	src: url("./../fonts/fira-sans-v8-latin-500.woff2") format("woff2"),
+	  url("./../fonts/fira-sans-v8-latin-500.woff") format("woff");
+}
+
+@font-face {
+	font-family: Fira Sans Body;
+	src: url("./../fonts/fira-sans-v8-latin-300.woff2") format("woff2"),
+	url("./../fonts/fira-sans-v8-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('./../fonts/roboto-v18-latin-700.woff2') format('woff2'),
+       url('./../fonts/roboto-v18-latin-700.woff') format('woff');
+}
+
+html, body {
+	height: 100%;
+	font-family: Fira Sans Body;
+	color: lime;
+}
+
+footer {
+	background-color: #E0C55B;
+	color: black;
+}
+
+textarea {
+	cursor: not-allowed;
+}
+
+section#field-viewer {
+	border-style: solid;
+	border-color: #E0C55B;
+	border-width: 3px;
+	border-radius: 5px;
+}
+
+.background {
+	background-size: 100% 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+.condition-generator {
+	margin-top: 2px;
+}
+
+.conditions-block {
+	height: 100%;
+	width: 14%;
+}
+
+.conditions-wrapper {
+	height: 70%;
+	margin-top: 1%;
+	color: #67666C;
+	font-size: 16px;
+	padding-left: 5px;
+}
+
+.confirm {
+	text-transform: uppercase;
+	text-align: center;
+	width: 93%;
+	height: 9%;
+}
+
+.confirm, .conditions-wrapper {
+	margin-left: 3%;
+}
+
+.confirmed {
+	background-color: #BDFE3E;
+	color: #173906;
+	cursor: pointer;
+}
+
+.field {
+	width: 64%;
+	height: 100%;
+}
+
+.heading {
+	color: #C0FF36;
+	font-family: Fira Sans Heading;
+	text-align: center;
+}
+
+.layer {
+	position: relative;
+}
+
+.svg.layer {
+	z-index: 1;
+}
+
+.div.layer {
+	z-index: 2;
+}
+
+.left {
+	float: left;
+}
+
+.options-start-button {
+	background: inherit;
+	cursor: inherit;
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+.not-confirmed {
+	background-color: #757786;
+	border-color: #757786;
+	cursor: not-allowed;
+}
+
+.relative {
+	position: relative;
+}
+
+.right {
+	float: right;
+}
+
+.section-header {
+	padding-left: 0px;
+}
+
+.separated {
+	padding-left: 90%;
+	height: 150%;
+}
+
+.separated textarea {
+	height: 100%;
+}
+
+.team-infos {
+	width: 20%;
+	position: relative;
+	top: 1%;
+	right: 1%;
+}
+
+.team-infos div {
+	height: 5%;
+}
+
+
+.team-infos table {
+	padding: 8px;
+}
+
+.team-infos .chemistry-bar {
+	height: 10px;
+	width: 20px;
+}
+
+.team-infos .chemistry-bar .filled {
+	background-color: #2E91BF;
+}
+
+.team-infos .chemistry-bar .empty {
+	background-color: #9693A4;
+}
+
+.team-infos, .conditions-wrapper {
+	background-color: #E9EBE6;
+	font-family: Fira Sans;
+	border: 3px solid #E9EBE6;
+}
+
+.team-infos .number {
+	color: #67666C;
+	font-weight: bold;
+	text-align: right;
+}
+
+.team-infos .text {
+	color: #67666C;
+	text-align: left;
+}
+
+.text {
+	font-family: Fira Sans Body;
+}
+
+.wrapper {
+	position: relative;
+	z-index: 1;
+	background: url(./../images/pitch.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 540px;
+	color: #767384;
+}
