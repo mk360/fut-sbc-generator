@@ -37,7 +37,7 @@ function getTeamRating(players) {
 	return avg
 }
 
-function getPositionChemistry(currentPosition, actualPosition) {
+function getPositionChemistry(actualPosition, currentPosition) {
 	if (currentPosition === actualPosition) return 3
 	return {
 		GK: {},

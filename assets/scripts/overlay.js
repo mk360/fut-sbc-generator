@@ -102,10 +102,10 @@ function createNewRow() {
 function collectCondition(rowLI) {
 	let label = getConditionPart(rowLI, "condition-label")
 	let keyword = getConditionPart(rowLI, "condition-keyword")
-	let conditionValue = getConditionPart(rowLI, "condition-number")
-	if ([label, keyword, conditionValue].includes("")) return
+	let value = getConditionPart(rowLI, "condition-number")
+	if ([label, keyword, value].includes("")) return
 		// One needed term is empty, condition is invalid
-	return [label, keyword, conditionValue]
+	return { label, keyword, value: +value }
 }
 
 for (i = 0; i < 5; i++) {
@@ -119,17 +119,25 @@ function getConditionPart(parent, className) {
 function refreshConditions(OL) {
 	let separatedConditions = OL.getElementsByClassName("condition-row")
 	let synthetizedText = ""
+	let i = 0
 	for (conditionRow of separatedConditions) {
 		let collectedCondition = collectCondition(conditionRow)
-
 		if (collectedCondition) {
-			synthetizedText += stringify(collectedCondition)
+			DOM_Validator.controlCondition(collectedCondition, i)
+			i++
 		}
 	}
+
+	synthetizedText = stringify(DOM_Validator.conditions)
+	// DOM_Validator.conditions gets updated if the condition can be reached
 
 	refreshDOM(document.getElementsByClassName("conditions-textarea")[0], synthetizedText)
 }
 
-function stringify(condition) {
-	return "- " + condition[0] + ": " + condition[1] + " " + condition[2] + ".\n"
+function stringify(conditions) {
+	let text = ""
+	for (let condition of conditions) {
+		try { text += "- " + condition.label + ": " + condition.keyword + " " + condition.value + ".\n" } catch (err) { console.log(condition) }
+	}
+	return text
 }

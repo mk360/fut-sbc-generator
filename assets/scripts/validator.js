@@ -29,7 +29,7 @@ const DOM_Validator = (function() {
 	let modifiedConditionsOptions = [...conditionsOptions]
 	modifiedConditionsOptions.pop()
 
-	for (label of modifiedConditionsOptions) {
+	for (let label of modifiedConditionsOptions) {
 		caps[label] = {
 			min: 0,
 			max: 11
@@ -37,15 +37,14 @@ const DOM_Validator = (function() {
 	}
 
 	return {
-		appendCondition: function(condition) {
-			chosenConditions.push(condition)
-		},
-		controlCondition: function(condition) {
-			let chosenLabel = condition[0]
+		controlCondition: function(condition, index) {
+			let chosenLabel = condition.label
 			let boundaries = caps[chosenLabel]
 			let conditionIsLegit = checkLegitimacy(boundaries, condition)
 			if (conditionIsLegit) {
-				applyNewBoundaries(caps, chosenLabel, condition)
+				DOM_Validator.conditions[index] = condition
+				applyNewBoundaries(boundaries, condition, chosenLabel)
+				console.log(boundaries)
 				return true
 			}
 		},
@@ -55,26 +54,28 @@ const DOM_Validator = (function() {
 	}
 })()
 
-function applyNewBoundaries(caps, label, condition) {
-	
+function applyNewBoundaries(boundaries, condition, chosenLabel) {
+	let newBoundary = extractThreshold(condition.keyword, condition.label, boundaries).text
+	setBoundaries(boundaries, newBoundary, condition)
 }
 
 function checkLegitimacy(boundaries, condition) {
-	let [, keyword, wantedValue] = condition // Destructuring is love, destructuring is life
+	let {keyword, value} = condition // Destructuring is love, destructuring is life
 	let legitimacyFunction = getKeywordFunction(keyword)
-	let partialApplication = legitimacyFunction.bind(null, wantedValue)
+	let partialApplication = legitimacyFunction.bind(null, value)
 	// we decided what value we want to compare,
 	// we still need to decide what should be the threshold
 
-	let threshold = getThreshold(keyword, wantedValue, boundaries)
-	if (threshold) return partialApplication(+threshold)
+	let threshold = getThreshold(keyword, value, boundaries)
+
+	if (threshold >= 0) return partialApplication(+threshold)
 }
 
-function extractThreshold(keyword, wantedValue, boundaries) {
+function extractThreshold(keyword, value, boundaries) {
 	return {
-		"Min.": boundaries.min,
-		"Max.": boundaries.max,
-		"Exactly": wantedValue
+		"Min.": { bound: boundaries.min, text: "min" },
+		"Max.": { bound: boundaries.max, text: "max" },
+		"Exactly": { bound: value }
 	}[keyword]
 }
 
@@ -120,10 +121,10 @@ function getSame(property) {
 	return valuesList
 }
 
-function getThreshold(keyword, wantedValue, boundaries) {
-	if (thresholdIsValid(keyword, wantedValue, boundaries)) {
-		let threshold = extractThreshold(keyword, wantedValue, boundaries)
-		if (threshold >= 0) return threshold.toString()
+function getThreshold(keyword, value, boundaries) {
+	if (thresholdIsValid(keyword, value, boundaries)) {
+		let threshold = extractThreshold(keyword, value, boundaries).bound
+		if (threshold >= 0) return +(threshold.toString())
 		// 0 is a valid threshold sometimes, so we
 		// force "0" to be a truthy value
 	}
@@ -133,24 +134,28 @@ function isVerified(condition) {
 	let {
 		label,
 		keyword,
-		requiredValue
+		value
 	} = condition
 
-	return parseCondition(label, keyword, requiredValue)
+	return parseCondition(label, keyword, value)
 }
 
-function parseCondition(label, keyword, requiredValue) {
+function parseCondition(label, keyword, value) {
 	let testedValue = getCheckedValue(label)
 	let comparingFunction = getKeywordFunction(keyword)
-	return comparingFunction(testedValue, requiredValue)
+	return comparingFunction(testedValue, value)
 }
 
-function thresholdIsValid(keyword, wantedValue, boundaries) {
-	return {
-		"Max.": wantedValue <= boundaries.max,
-		"Min.": wantedValue >= boundaries.min,
-		"Exactly": wantedValue >= boundaries.min && wantedValue <= boundaries.max
-	}[keyword]
+function setBoundaries(boundaries, newBoundary, condition) {
+	if (["max", "min"].includes(newBoundary)) {
+		boundaries[newBoundary] = condition.value
+	} else {
+		boundaries.max = boundaries.min = condition.value
+	}
+}
+
+function thresholdIsValid(keyword, value, boundaries) {
+	return value <= boundaries.max && value >= boundaries.min
 }
 
 function validateConditions() {
