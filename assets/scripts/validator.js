@@ -1,5 +1,3 @@
-// When in condition-defining mode,
-// control the legitimacy of conditions.
 // When in problem-solving mode, control the validation
 // of the user's choices
 
@@ -46,6 +44,8 @@ const DOM_Validator = (function() {
 				applyNewBoundaries(boundaries, condition, chosenLabel)
 				console.log(boundaries)
 				return true
+			} else {
+				removeFromArray(DOM_Validator.conditions, condition)
 			}
 		},
 		get conditions() {

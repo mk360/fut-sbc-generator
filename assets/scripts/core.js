@@ -164,17 +164,4 @@ function cleanMemory(componentsList) {
 	}
 }
 
-function removeFromArray(array, playerToRemove) { 
-	// remove a player (basically, his data object) from the team array
-	// hence the need for underscore.js' .isEqual
-	let i = 0
-	for (listedPlayer of array) {
-		if (_.isEqual(listedPlayer, playerToRemove)) {
-			array.splice(i, 1)
-			return 
-		}
-		i++
-	}
-}
-
 function addNewPlayer() {}

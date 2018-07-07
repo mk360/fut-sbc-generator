@@ -42,7 +42,7 @@ ol li * {
 }
 
 .extra-width {
-	width: 102%;
+	width: 101%;
 }
 
 .formation-picker {
@@ -62,23 +62,24 @@ ol li * {
 	z-index: 2;
 	opacity: 0.76;
 	background-color: white;
-	height: 540px;
-	width: 50%;
+	height: auto;
 	position: relative;
 	color: navy;
 	font-family: Roboto;
+	width: 590px;
 }
 
 .welcome-description {
-	top: 20%;
-	left: 50%;
+	position: relative;
+	top: -2%;
 	font-size: 110%;
 	margin: 2% 0% 5% 0%;
 }
 
 .welcome-message {
-	top: 10%;
-	left: 50%;
+	position: relative;
+	top: 1%;
+	left: 2%;
 	font-size: 230%;
 	margin: 1% 0% 3% 0%;
 }

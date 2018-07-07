@@ -32,3 +32,14 @@ function forceNumber(value, minmax) {
 	}
 	return Number(value)
 }
+
+function removeFromArray(array, element) { 
+	let i = 0
+	for (let loopedElement of array) {
+		if (_.isEqual(loopedElement, element)) {
+			array.splice(i, 1)
+			return 
+		}
+		i++
+	}
+}
