@@ -7,48 +7,12 @@
 		<link rel="stylesheet" href="./assets/styles/card fonts.css" />
 		<link rel="stylesheet" href="./assets/styles/overlay.css" />
 		<script src="./assets/libs/underscore-1.9.1.js"></script>
-		<meta charset="UTF-8" name="viewport" content="user-scalable=no" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 		<title>FIFA 18 Squad Building Challenge Generator</title>
 	</head>
 	<body style="background-color: navy">
 		<h3 class="heading">FUT 18 Squad Building Challenge Generator</h3>
-		<div class="relative welcome" id="overlay">
-		<!--<div class="presentation">
-			</div>
-			<div class="select-conditions">
-				<div class="left conditions-controllers">
-					<div class="left formation">
-						<select id="formation">
-							<option></option>
-							<option>3-4-1-2</option><option>4-1-2-1-2</option>
-							<option>4-2-3-1</option><option>4-3-1-2</option>
-							<option>4-4-1-1</option><option>4-5-1</option>
-							<option>5-2-1-2</option><option>3-4-2-1</option>
-							<option>4-1-2-1-2 (2)</option><option>4-2-3-1 (2)</option>
-							<option>4-3-2-1</option><option>4-4-2</option>
-							<option>4-5-1 (2)</option><option>5-2-2-1</option>
-							<option>3-4-3</option><option>4-1-4-1</option>
-							<option>4-2-2-2</option><option>4-3-3</option>
-							<option>4-4-2 (2)</option><option>5-3-2</option>
-							<option>3-5-2</option><option>4-3-3 (2)</option>
-							<option>4-3-3 (3)</option><option>4-3-3 (4)</option>
-							<option>4-3-3 (5)</option>
-						</select>
-					</div>
-					<div class="right conditions-dropdowns">
-						<ul class="condition-listing">
-						</ul>
-					</div>
-					<div style="clear: both"></div>
-				</div>
-				<div class="right checker">
-					<textarea class="conditions-viewer"></textarea>
-				</div>
-				<div style="clear: both"></div>
-			</div>
-		-->
-		</div>
-		<div class="relative wrapper">
+		<div class="wrapper">
 			<div class="left conditions-block">
 				<div class="conditions-wrapper">
 					<div id="listed-conditions">
@@ -93,7 +57,52 @@
 			</div>
 			<div style="clear: both"></div>
 		</div>
-		<footer>
+		<div class="welcome">
+			<div class="gradual gradual-immediate welcome-header">
+				Welcome to the FUT18 Squad Building Challenge Generator!
+			</div>
+			<div class="gradual gradual-intermediate welcome-message">
+				If you always wanted to try and create your own FUT18-like Squad Building Challenges, this place is for you!
+				Select the conditions you want down below, and enjoy solving your challenge!
+			</div>
+			<div class="horizontal condition-factory">
+				<div class="condition-picker">
+					<div class="formation-picker">
+						Formation <select id="formation">
+									<option></option>
+									<option>3-4-1-2</option><option>4-1-2-1-2</option>
+									<option>4-2-3-1</option><option>4-3-1-2</option>
+									<option>4-4-1-1</option><option>4-5-1</option>
+									<option>5-2-1-2</option><option>3-4-2-1</option>
+									<option>4-1-2-1-2 (2)</option><option>4-2-3-1 (2)</option>
+									<option>4-3-2-1</option><option selected>4-4-2</option>
+									<option>4-5-1 (2)</option><option>5-2-2-1</option>
+									<option>3-4-3</option><option>4-1-4-1</option>
+									<option>4-2-2-2</option><option>4-3-3</option>
+									<option>4-4-2 (2)</option><option>5-3-2</option>
+									<option>3-5-2</option><option>4-3-3 (2)</option>
+									<option>4-3-3 (3)</option><option>4-3-3 (4)</option>
+									<option>4-3-3 (5)</option>
+								</select>
+					</div>
+					<div class="horizontal extra-width">
+						<div class="sbc-conditions">
+							<ol class="condition-generator">
+							</ol>
+						</div>
+						<div class="conditions-summary">
+							<textarea readonly class="conditions-textarea" placeholder="A summary of the conditions you input will be shown here."></textarea>
+						</div>
+						<div style="clear: both"></div>
+					</div>
+					<div style="clear: both"></div>
+				</div>
+			</div>
+			<div class="extra-width sbc-confirm">
+				<button type="submit" class="full-width submit">Start SBC</button>
+			</div>
+		</div>
+		<footer class="hoisted">
 			<div class="center">
 				<p>
 				 	All images courtesy of <a href="https://www.futhead.com" target="_blank">Futhead.com</a>.
@@ -108,6 +117,6 @@
 		<script src="./assets/scripts/validator.js"></script>
 		<script src="./assets/scripts/cards.js"></script>
 		<script src="./assets/scripts/tester.js"></script>
-		<!--<script src="./assets/scripts/overlay.js"></script>-->
+		<script src="./assets/scripts/overlay.js"></script>
 	</body>
 </html>

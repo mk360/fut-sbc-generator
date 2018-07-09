@@ -197,7 +197,7 @@ section#field-viewer {
 
 .wrapper {
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 	background: url(./../images/pitch.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;

@@ -37,10 +37,6 @@ ol li * {
 	height: 163px;
 }
 
-.horizontal div {
-	float: left;
-}
-
 .extra-width {
 	width: 101%;
 }
@@ -53,33 +49,44 @@ ol li * {
 	width: 99%;
 }
 
+.hoisted {
+	margin-top: -470px; /* Hoist the footer up top to fill the blank left by the overlay div */
+}
+
+.horizontal div {
+	float: left;
+}
+
 .sbc-conditions {
 	width: 411px;
 	display: inline-block;
 }
 
 .welcome {
-	z-index: 2;
-	opacity: 0.76;
-	background-color: white;
-	height: auto;
 	position: relative;
+	z-index: 1;
+	background-color: white;
+	top: -86%;
+	height: 450px;
 	color: navy;
 	font-family: Roboto;
-	width: 590px;
+	width: 693px;
+	left: 25%;
+	padding: 10px;
 }
 
-.welcome-description {
-	position: relative;
-	top: -2%;
-	font-size: 110%;
-	margin: 2% 0% 5% 0%;
-}
-
-.welcome-message {
+.welcome-header {
 	position: relative;
 	top: 1%;
 	left: 2%;
 	font-size: 230%;
 	margin: 1% 0% 3% 0%;
+}
+
+.welcome-message {
+	position: relative;
+	top: -2%;
+	font-size: 110%;
+	margin: 2% 0% 5% 0%;
+	left: 1%;
 }
