@@ -4,8 +4,8 @@ conditionsOL.onchange = function() {
 	refreshConditions(this)
 }
 
-document.getElementsByClassName("submit").onclick = function() {
-	let valid = validateConditions()
+document.getElementsByClassName("submit")[0].onclick = function() {
+	let valid = DOM_Validator.conditions.length >= 1
 	if (valid) prepareField()
 }
 
@@ -128,16 +128,10 @@ function refreshConditions(OL) {
 		}
 	}
 
-	synthetizedText = stringify(DOM_Validator.conditions)
+	for (let validCondition of DOM_Validator.conditions) {
+		synthetizedText += stringify(validCondition) + "\n"
+	}
 	// DOM_Validator.conditions gets updated if the condition can be reached
 
 	refreshDOM(document.getElementsByClassName("conditions-textarea")[0], synthetizedText)
-}
-
-function stringify(conditions) {
-	let text = ""
-	for (let condition of conditions) {
-		try { text += "- " + condition.label + ": " + condition.keyword + " " + condition.value + ".\n" } catch (err) { console.log(condition) }
-	}
-	return text
 }

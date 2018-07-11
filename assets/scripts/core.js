@@ -1,12 +1,5 @@
 const playersOfDatabase = Object.keys(players)
 
-/*document.getElementsByTagName("textarea")[0].onclick = function(e) {
-	e.preventDefault()
-	// one does not simply get a cursor blinking when he clicks
-	// on the textarea.
-	// This little piece should do the job.
-}*/
-
 const listHandler = (function() {
 	let componentsList = {
 		nations: {},
@@ -98,70 +91,45 @@ const listHandler = (function() {
 	}
 })()
 
-// Initialize values for specified nations / leagues / clubs, if they're different than what's already available
-// Had this method not existed, we would be forced to check for each property and whether it exists or not.
-// The check would happen in the listHandler.addPlayer method
-//  
-//                   v
+function createAppearingLI(condition) {
+	let li = document.createElement("li")
+	let tickbox = createBoundCheckbox(li, condition)
+	let span = createConditionSpan(condition)
+	li.appendChild(tickbox)
+	li.appendChild(span)
+	return li
+}
 
-function fillEntriesGaps(parentObject, objectToInsert) {
-	if (!(objectToInsert.nation in parentObject.nations)) {
-		parentObject.nations[objectToInsert.nation] = 0
-	}
+function createBoundCheckbox(li, condition) {
+	let input = document.createElement("input")
+	input.type = "checkbox"
+	input.onclick = function(e) { e.preventDefault() }
+	input.classList.add("condition-input")
+	li.addEventListener("fieldUpdate", function() {
+		input.checked = isVerified(condition)
+	})
+	return input
+}
 
-	if (!(objectToInsert.club in parentObject.clubs)) {
-		parentObject.clubs[objectToInsert.club] = 0
-	}
+function createConditionSpan(condition) {
+	let span = document.createElement("span")
+	span.innerHTML = stringify(condition)
+	span.style.marginLeft = "2px"
+	return span
+}
 
-	if (!(objectToInsert.league in parentObject.leagues)) {
-		parentObject.leagues[objectToInsert.league] = 0
-	}
-
-	if (!(objectToInsert.quality in parentObject.qualities)) {
-		parentObject.qualities[objectToInsert.quality] = 0	
-	}
-
-	if (!(objectToInsert.edition in parentObject.editions)) {
-		parentObject.editions[objectToInsert.edition] = 0	
-	}
-
-	if (!("specialness" in parentObject)) {
-		parentObject.specialness = {}
-		parentObject.specialness["true"] = 0
-		parentObject.specialness["false"] = 0
+function mapConditions() {
+	let field = document.getElementsByClassName("wrapper")[0]
+	for (let condition of DOM_Validator.conditions) {
+		let conditionLI = createAppearingLI(condition)
 	}
 }
 
-function incrementEntries(componentsList, neededData) {
-	componentsList.nations[neededData.nation]++
-	componentsList.clubs[neededData.club]++
-	componentsList.leagues[neededData.league]++
-	componentsList.qualities[neededData.quality]++
-	componentsList.editions[neededData.edition]++
-	componentsList.specialness[neededData.isSpecial.toString()]++
+function prepareField() {
+	let overlay = document.getElementsByClassName("welcome")[0]
+	let formation = overlay.querySelector("#formation").value
+	overlay.parentNode.removeChild(overlay)
+	document.getElementsByClassName("hoisted")[0].classList.remove("hoisted")
+	mapConditions()
+	generatePlayers()
 }
-
-function decrementEntries(componentsList, neededData) {
-	componentsList.nations[neededData.nation]--
-	componentsList.clubs[neededData.club]--
-	componentsList.leagues[neededData.league]--
-	componentsList.qualities[neededData.quality]--
-	componentsList.editions[neededData.edition]--
-	componentsList.specialness[neededData.isSpecial.toString()]--
-}
-
-function cleanMemory(componentsList) {
-	for (property in componentsList) {
-		if (property !== "specialness") {
-			for (subProperty in componentsList[property]) {
-				if (componentsList[property][subProperty] === 0) delete componentsList[property][subProperty]
-			}
-		} else {
-			for (trueness in componentsList.specialness) {
-				if (componentsList.specialness[trueness] === 0) delete componentsList.specialness[trueness]
-			}
-		}
-	}
-}
-
-function addNewPlayer() {}

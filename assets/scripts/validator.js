@@ -1,6 +1,3 @@
-// When in problem-solving mode, control the validation
-// of the user's choices
-
 const solvingValidator = (function() {
 	return {
 		verify: function() {
@@ -41,8 +38,9 @@ const DOM_Validator = (function() {
 			let conditionIsLegit = checkLegitimacy(boundaries, condition)
 			if (conditionIsLegit) {
 				DOM_Validator.conditions[index] = condition
+				// we can't push the condition to the validator,
+				// because it would create a 50+ length array in that case
 				applyNewBoundaries(boundaries, condition, chosenLabel)
-				console.log(boundaries)
 				return true
 			} else {
 				removeFromArray(DOM_Validator.conditions, condition)
@@ -156,8 +154,4 @@ function setBoundaries(boundaries, newBoundary, condition) {
 
 function thresholdIsValid(keyword, value, boundaries) {
 	return value <= boundaries.max && value >= boundaries.min
-}
-
-function validateConditions() {
-
 }

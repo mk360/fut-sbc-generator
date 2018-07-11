@@ -34,13 +34,6 @@ textarea {
 	cursor: not-allowed;
 }
 
-section#field-viewer {
-	border-style: solid;
-	border-color: #E0C55B;
-	border-width: 3px;
-	border-radius: 5px;
-}
-
 .background {
 	background-size: 100% 100%;
 }
@@ -49,13 +42,17 @@ section#field-viewer {
 	text-align: center;
 }
 
-.condition-generator {
-	margin-top: 2px;
-}
-
 .conditions-block {
 	height: 100%;
 	width: 14%;
+}
+
+#conditions-list {
+	list-style: none;
+}
+
+.condition-generator {
+	margin-top: 2px;
 }
 
 .conditions-wrapper {
@@ -83,9 +80,23 @@ section#field-viewer {
 	cursor: pointer;
 }
 
+.div.layer {
+	z-index: 2;
+}
+
 .field {
 	width: 64%;
 	height: 100%;
+}
+
+.field-wrapper {
+	position: relative;
+	z-index: 0;
+	background: url(./../images/pitch.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 540px;
+	color: #767384;
 }
 
 .heading {
@@ -96,14 +107,6 @@ section#field-viewer {
 
 .layer {
 	position: relative;
-}
-
-.svg.layer {
-	z-index: 1;
-}
-
-.div.layer {
-	z-index: 2;
 }
 
 .left {
@@ -145,20 +148,15 @@ section#field-viewer {
 	height: 100%;
 }
 
+.svg.layer {
+	z-index: 1;
+}
+
 .team-infos {
 	width: 20%;
 	position: relative;
 	top: 1%;
 	right: 1%;
-}
-
-.team-infos div {
-	height: 5%;
-}
-
-
-.team-infos table {
-	padding: 8px;
 }
 
 .team-infos .chemistry-bar {
@@ -172,6 +170,15 @@ section#field-viewer {
 
 .team-infos .chemistry-bar .empty {
 	background-color: #9693A4;
+}
+
+.team-infos div {
+	height: 5%;
+}
+
+
+.team-infos table {
+	padding: 8px;
 }
 
 .team-infos, .conditions-wrapper {
@@ -193,14 +200,4 @@ section#field-viewer {
 
 .text {
 	font-family: Fira Sans Body;
-}
-
-.wrapper {
-	position: relative;
-	z-index: 0;
-	background: url(./../images/pitch.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	height: 540px;
-	color: #767384;
 }
