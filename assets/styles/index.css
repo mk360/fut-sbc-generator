@@ -30,6 +30,26 @@ footer {
 	color: black;
 }
 
+label {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: block;
+	float: left;
+}
+
+label.reached {
+	background-image: url('./../images/complete.png');
+}
+
+label.not-reached {
+	background-image: url('./../images/incomplete.png');
+}
+
+li span {
+	display: block;
+	float: left;
+}
+
 textarea {
 	cursor: not-allowed;
 }
@@ -42,6 +62,11 @@ textarea {
 	text-align: center;
 }
 
+#condition-box {
+	position: relative;
+	z-index: -999999;
+}
+
 .conditions-block {
 	height: 100%;
 	width: 14%;
@@ -49,6 +74,10 @@ textarea {
 
 #conditions-list {
 	list-style: none;
+	position: relative;
+	right: 41px;
+	width: 100%;
+	font-size: 103%;
 }
 
 .condition-generator {
@@ -133,6 +162,11 @@ textarea {
 
 .right {
 	float: right;
+}
+
+.sbc-condition {
+	width: 12px;
+	height: 12px;
 }
 
 .section-header {

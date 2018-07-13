@@ -93,21 +93,36 @@ const listHandler = (function() {
 
 function createAppearingLI(condition) {
 	let li = document.createElement("li")
-	let tickbox = createBoundCheckbox(li, condition)
+	let [label, tickbox] = createBoundCheckbox(li, condition)
 	let span = createConditionSpan(condition)
-	li.appendChild(tickbox)
+	li.appendChild(label)
 	li.appendChild(span)
+	li.appendChild(tickbox)
 	return li
 }
 
 function createBoundCheckbox(li, condition) {
-	let input = document.createElement("input")
-	input.type = "checkbox"
-	input.onclick = function(e) { e.preventDefault() }
-	input.classList.add("condition-input")
+	let input = createConditionInput()
+	let label = createLabel()
 	li.addEventListener("fieldUpdate", function() {
 		input.checked = isVerified(condition)
+		if (input.checked) {
+			label.classList.add("reached")
+			label.classList.remove("not-reached")
+		} else {
+			label.classList.add("not-reached")
+			label.classList.remove("reached")
+		}
 	})
+	return [label, input]
+}
+
+function createConditionInput() {
+	let input = document.createElement("input")
+	input.id = "condition-box"
+	input.type = "checkbox"
+	input.classList.add("condition-input")
+	input.onclick = function(e) { e.preventDefault() }
 	return input
 }
 
@@ -118,10 +133,19 @@ function createConditionSpan(condition) {
 	return span
 }
 
+function createLabel() {
+	let label = document.createElement("label")
+	label.htmlFor = "condition-box"
+	label.classList.add("sbc-condition")
+	label.classList.add("not-reached")
+	return label
+}
+
 function mapConditions() {
 	let field = document.getElementsByClassName("wrapper")[0]
 	for (let condition of DOM_Validator.conditions) {
 		let conditionLI = createAppearingLI(condition)
+		document.getElementById("conditions-list").appendChild(conditionLI)
 	}
 }
 
